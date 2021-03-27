@@ -2,25 +2,36 @@ package main
 
 import "fmt"
 
-//結構體
-
-type person struct {
-	 name 	string
-	 age 	int
-	 gender string
-	 hobby 	[]string
+//結構體模擬實現其他語言中的"繼承"
+type animal struct {
+	name string
 }
 
-func main() {
-	// 聲明一個person類型的變量P
-	var p person
-	// 通過字段賦值
-	p.name = "evan"
-	p.age  = 37
-	p.gender = "男"
-	p.hobby =[]string{"電玩", "音樂", "電影"}
-	fmt.Println(p)
-	// 訪問變量p的字段
-	fmt.Printf("%T\n",p)
-	fmt.Println(p.name)
+//給animal實現一個移動的方法
+func (a animal) move (){
+	fmt.Printf("%s會動",a.name)
+}
+
+
+//狗
+type dog struct {
+	feet uint8
+	animal   //animal 擁有的方法，dog 此時也有了繼承
+}
+
+//給狗實現一個汪的方法
+func (d dog) wang (){
+	fmt.Printf("%s在叫：汪汪汪", d.name)
+}
+
+func main(){
+	d1 := dog {
+		animal:animal{name:"jojo"},
+		feet:  4,
+	}
+	fmt.Println(d1)
+	d1.wang()
+	d1.move()
+
+
 }
