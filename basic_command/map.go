@@ -13,4 +13,12 @@ func main() {
 	m1["年紀"] = 18
 	m1["體重"] = 60
 	fmt.Println(m1)
+	fmt.Println(m1["年紀"])
+
+	value , ok := m1 ["體重"] //查詢map是否有值
+	if !ok {
+		fmt.Println("查無此key")
+	}else {
+		fmt.Println(value)
+	}
 }
