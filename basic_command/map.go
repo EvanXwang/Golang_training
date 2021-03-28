@@ -15,10 +15,16 @@ func main() {
 	fmt.Println(m1)
 	fmt.Println(m1["年紀"])
 
-	value , ok := m1 ["體重"] //查詢map是否有值
+	fmt.Println(m1["身高"]) // 如果不存在這個key ，拿到對應值類型的零值
+	value , ok := m1 ["身高"] //查詢map是否有值
 	if !ok {
 		fmt.Println("查無此key")
 	}else {
 		fmt.Println(value)
+	}
+
+	
+	for k, v := range m1 {
+		fmt.Println(k,v)
 	}
 }
