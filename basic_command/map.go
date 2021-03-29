@@ -23,7 +23,7 @@ func main() {
 		fmt.Println(value)
 	}
 
-	
+
 	for k, v := range m1 {
 		fmt.Println(k,v)
 	}
